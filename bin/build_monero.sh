@@ -1,6 +1,7 @@
 [ -z "${GOPATH}"  ] && GOPATH=${HOME}/go
 
-PKGPATH=${GOPATH}/src/github.com/luoqeng/mymonero-core-go
+FIRST_GOPATH=$(echo ${GOPATH}| cut -d':' -f 1)
+PKGPATH=${FIRST_GOPATH}/src/github.com/luoqeng/mymonero-core-go
 [ ! -d "${PKGPATH}"  ] && go get github.com/luoqeng/mymonero-core-go
 
 LIBMONERO=/build/lib/libmymonero.a
