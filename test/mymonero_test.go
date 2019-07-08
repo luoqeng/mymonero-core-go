@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/buger/jsonparser"
 	"github.com/luoqeng/mymonero-core-go/src"
 )
 
@@ -23,17 +22,16 @@ func TestGenerateKeyImage(t *testing.T) {
 
 	ret := mymonero.CallFunc("generate_key_image", string(argsStr))
 
-	err_msg, err := jsonparser.GetString([]byte(ret), "err_msg")
-	if err == nil {
+	var retMap map[string]string
+	if err := json.Unmarshal([]byte(ret), &retMap); err != nil {
+		t.Fatalf("err:%s", err)
+	}
+
+	if err_msg, ok := retMap["err_msg"]; ok {
 		t.Fatalf("err_msg:%s", err_msg)
 	}
 
-	keyImage, err := jsonparser.GetString([]byte(ret), "retVal")
-	if err != nil {
-		t.Fatalf("parse retVal:%s", ret)
-	}
-
-	if keyImage != "ae30ee23051dc0bdf10303fbd3b7d8035a958079eb66516b1740f2c9b02c804e" {
+	if keyImage, ok := retMap["retVal"]; !ok || keyImage != "ae30ee23051dc0bdf10303fbd3b7d8035a958079eb66516b1740f2c9b02c804e" {
 		t.Fatalf("keyImage:%s not equality", keyImage)
 	}
 }

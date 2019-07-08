@@ -2,9 +2,6 @@
 
 FIRST_GOPATH=$(echo ${GOPATH}| cut -d':' -f 1)
 
-PKG_JSONPARSE=${FIRST_GOPATH}/src/github.com/buger/jsonparser
-[ ! -d "${PKG_JSONPARSE}"  ] && go get github.com/buger/jsonparser
-
 PKG_MONERO=${FIRST_GOPATH}/src/github.com/luoqeng/mymonero-core-go
 [ ! -d "${PKG_MONERO}"  ] && go get github.com/luoqeng/mymonero-core-go
 
