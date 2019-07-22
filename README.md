@@ -23,6 +23,20 @@ Ubuntu
 $ sudo apt install libboost-all-dev
 ```
 
+CentOS
+```
+$ sudo   yum groupinstall 'Development Tools'
+$ sudo  yum install centos-release-scl
+$ sudo  yum install devtoolset-7
+
+$ scl enable devtoolset-7 bash # source /opt/rh/devtoolset-7/enable
+
+$ sudo yum install epel-release
+$ sudo yum install cmake3
+
+$ sudo yum install boost-devel
+```
+
 ```
 $ git clone https://github.com/luoqeng/mymonero-core-go
 $ cd mymonero-core-go
