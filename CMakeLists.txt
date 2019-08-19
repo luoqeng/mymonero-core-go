@@ -4,6 +4,8 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 project(MyMoneroCoreCpp)
 
+#set(Boost_USE_STATIC_LIBS ON)
+
 #Prep ourselves for compiling boost
 find_package(Boost COMPONENTS
     system REQUIRED
