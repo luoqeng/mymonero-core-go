@@ -1,6 +1,6 @@
 package mymonero
 
-// #cgo LDFLAGS: -L${SRCDIR}/../build/lib -lmymonero -lboost_system -lboost_thread -lpthread -lstdc++
+// #cgo LDFLAGS: -L${SRCDIR}/../build/lib -Wl,-Bstatic -lmymonero -lboost_system -lboost_thread -lstdc++ -Wl,-Bdynamic -lpthread
 // #include <stdlib.h>
 // #include "bridge/mymonero.h"
 import "C"
