@@ -35,6 +35,8 @@ $ sudo yum install epel-release
 $ sudo yum install cmake3
 
 $ sudo yum install boost-devel
+$ sudo yum install boost-static
+$ sudo ln -s /usr/lib64/libboost_thread-mt.a /usr/lib64/libboost_thread.a
 ```
 
 ```
