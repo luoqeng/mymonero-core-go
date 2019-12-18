@@ -39,6 +39,7 @@ $ sudo yum install boost-static
 $ sudo ln -s /usr/lib64/libboost_thread-mt.a /usr/lib64/libboost_thread.a
 ```
 
+Build
 ```
 $ git clone https://github.com/luoqeng/mymonero-core-go
 $ cd mymonero-core-go
